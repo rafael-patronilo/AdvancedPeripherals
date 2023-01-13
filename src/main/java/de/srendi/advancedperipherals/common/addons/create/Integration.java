@@ -5,6 +5,8 @@ import com.simibubi.create.content.contraptions.components.mixer.MechanicalMixer
 import com.simibubi.create.content.contraptions.fluids.tank.FluidTankTileEntity;
 import com.simibubi.create.content.contraptions.processing.BasinTileEntity;
 import com.simibubi.create.content.contraptions.processing.burner.BlazeBurnerTileEntity;
+import com.simibubi.create.content.contraptions.relays.gauge.SpeedGaugeTileEntity;
+import com.simibubi.create.content.contraptions.relays.gauge.StressGaugeTileEntity;
 import com.simibubi.create.foundation.tileEntity.behaviour.scrollvalue.ScrollValueBehaviour;
 import de.srendi.advancedperipherals.common.addons.computercraft.integrations.IntegrationPeripheralProvider;
 
@@ -17,5 +19,7 @@ public class Integration implements Runnable {
         IntegrationPeripheralProvider.registerBlockEntityIntegration(ScrollValueBehaviourIntegration::new, KineticTileEntity.class, tile -> tile.getBehaviour(ScrollValueBehaviour.TYPE) != null, 10);
         IntegrationPeripheralProvider.registerBlockEntityIntegration(BasinIntegration::new, BasinTileEntity.class);
         IntegrationPeripheralProvider.registerBlockEntityIntegration(MechanicalMixerIntegration::new, MechanicalMixerTileEntity.class);
+        IntegrationPeripheralProvider.registerBlockEntityIntegration(SpeedGaugeIntegration::new, SpeedGaugeTileEntity.class);
+        IntegrationPeripheralProvider.registerBlockEntityIntegration(StressGaugeIntegration::new, StressGaugeTileEntity.class);
     }
 }
